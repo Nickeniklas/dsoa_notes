@@ -1,25 +1,24 @@
 public class Clothing {
 
     String brand;
-    String price;
+    int price = 0;
     String type;
 
     //  GETTERS
     public String getBrand() {
         return brand;
     }
-    public String getPrice() {
+    public int getPrice() {
         return price;
     }
     public String getType() {
         return type;
     }
-
     //  SETTERS
     public void setBrand(String brand) {
         this.brand = brand;
     }
-    public void setPrice(String price) {
+    public void setPrice(int price) {
         this.price = price;
     }
     public void setType(String type) {

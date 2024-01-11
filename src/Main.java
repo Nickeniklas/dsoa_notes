@@ -7,12 +7,9 @@ public class Main {
         System.out.printf("Hello and yes åäö!");
 
         // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
-        }
+        // Press Shift+F9 to start debugging your code. We have set one breakpoint
+        // for you, but you can always add more by pressing Ctrl+F8.
+        for (int i = 1; i <= 5; i++) System.out.println("i = " + i);
         //  DEKLARERA = vem.
         //  INITIERA eller INITIALISERA = hur mycket.
         //  INSTANSIERA = Skapar en instans, skapar ett objekt av en klass. (new x).
@@ -24,15 +21,26 @@ public class Main {
 
         //  TESTAR klassen Car
         //  instansiering av objekt
-        Car car = new Car("Caddy");
-        Car fastCar = new Car("VolvoD24");
+        Car caddyCar = new Car("Caddy");
+        Car volvoCar = new Car("VolvoD24");
 
-        System.out.println(car.getName());
-        System.out.println(fastCar.getName());
+        Bike shittyBike = new Bike("2wheels");
+        System.out.println(caddyCar.getName());
+        System.out.println(volvoCar.getName());
 
-        fastCar.setName("kööööööööööl");
-        System.out.println(fastCar.getName());
+        volvoCar.setName("kööööööööööl");
+        System.out.println(volvoCar.getName());
 
+        System.out.println(shittyBike.getName() + " " + shittyBike.getType());
+
+        //  LEKTIONS UPGIFT
+        Shirt shirt = new Shirt("Gucci-jacket");
+        System.out.println(shirt.getBrand() + " " + shirt.getType() + " " + shirt.getPrice());
+
+        shirt.setBrand("LV");
+        shirt.setPrice("69$");
+        shirt.setType("not-a-shirt");
+        System.out.println(shirt.getBrand() + " " + shirt.getType() + " " + shirt.getPrice());
     }
 }
 

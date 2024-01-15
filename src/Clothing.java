@@ -1,14 +1,14 @@
-public class Clothing {
+abstract class Clothing {
 
     String brand;
-    int price = 0;
+    double price = 0;
     String type;
 
     //  GETTERS
     public String getBrand() {
         return brand;
     }
-    public int getPrice() {
+    public double getPrice() {
         return price;
     }
     public String getType() {
@@ -18,7 +18,7 @@ public class Clothing {
     public void setBrand(String brand) {
         this.brand = brand;
     }
-    public void setPrice(int price) {
+    public void setPrice(double price) {
         this.price = price;
     }
     public void setType(String type) {

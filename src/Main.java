@@ -1,5 +1,8 @@
 import java.sql.SQLOutput;
 import java.util.HashMap;
+import java.util.InputMismatchException;
+import java.util.Random;
+import java.util.Scanner;
 
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
@@ -77,8 +80,42 @@ public class Main {
 
         //  CODE CHALLENGE OVERLOADING
         Calculator calc = new Calculator();
-        System.out.println("\nYour numbers equal to: " + calc.multiply(2,3));
-        System.out.println("Your numbers equal to: " + calc.multiply(2,3, 4));
+        System.out.println("\nYour numbers equal to: " + calc.multiply(2, 3));
+        System.out.println("Your numbers equal to: " + calc.multiply(2, 3, 4));
+
+        //  LEKTION 18.1
+        Scanner intInput = new Scanner(System.in);
+        Scanner strInput = new Scanner(System.in);
+        /*System.out.printf("Write your name: ");
+        String userInputName = strInput.nextLine();
+        System.out.printf("Write a number: ");
+        int userInputInt = intInput.nextInt();
+        System.out.printf("%s, your spirit number is: %.0f\n", userInputName, calc.multiply(5, userInputInt));*/
+
+        while (true) {
+            try {
+                System.out.print("Write a number: ");
+                int userInputInt = Integer.parseInt(strInput.nextLine());
+                System.out.printf("Your number: %.0f\n", calc.multiply(5, userInputInt));
+                break;
+            } catch (NumberFormatException e) {
+                System.out.println("Du måste ge ett heltal...");
+            } catch (Exception e) {
+                System.out.printf("Something went very wrong :( \nERROR: %s\n", e);
+            }
+        }
+        System.out.println("Press R for a random number or  press Q to exit!");
+        while (true) {
+            String userInputKey = strInput.nextLine();
+            if (userInputKey.equals("r")) {
+                Random rnd1 = new Random();
+                System.out.printf("Random Number: %d\n", rnd1.nextInt(100));
+            } else if (userInputKey.equals("q")) {
+                System.out.println("Shutting Down...\n");
+                System.exit(0);
+            }
+        }
     }
+
 }
 

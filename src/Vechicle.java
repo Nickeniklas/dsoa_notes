@@ -7,6 +7,10 @@ public class Vechicle {
         this.type = type;
     }
 
+    public void warningSound() {
+        System.out.println("Default sound");
+    }
+
     //  GETTER
     public String getName() {
         return name;    //  behövs inte this.name

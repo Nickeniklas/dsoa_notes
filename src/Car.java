@@ -12,9 +12,11 @@ public class Car extends Vechicle {
         super(name, "Ground Vechicle");
         carsCreated++;
     }
+    @Override
     public void warningSound() {
         System.out.println("Tuut TUUUUT");
     }
+
     public void refuel() {
         this.fuel = 100;
     }

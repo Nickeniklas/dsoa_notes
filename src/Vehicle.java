@@ -1,25 +1,33 @@
-public class Vechicle {
+public class Vehicle {
+
     private String name;
     private String type;
 
-    public Vechicle(String name, String type) {
+    public Vehicle(String name, String type) {
         this.name = name;
         this.type = type;
     }
 
-    public void warningSound() {
+
+    public void soundWarning() {
         System.out.println("Default sound");
     }
 
-    //  GETTER
+    // Getter
     public String getName() {
-        return name;    //  behövs inte this.name
+        return name;
     }
+
     public String getType() {
         return type;
     }
-    //  SETTER
+
+    // Setter
     public void setName(String name) {
         this.name = name;
+    }
+
+    public double getPrice() {
+        return 0;
     }
 }

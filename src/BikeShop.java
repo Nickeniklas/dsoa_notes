@@ -11,4 +11,16 @@ public class BikeShop {
     public ArrayList<Bike> getBikes() {
         return bikes;
     }
+
+    public Bike chooseBike() {
+        int chosenBike = Utils.getIntInput("Vilken cykel vill du köpa?");
+        while(true) {
+            try {
+                return bikes.get(chosenBike);
+            } catch (Exception e) {
+                System.out.println("Bike doesnt exsit...");
+                chosenBike = Utils.getIntInput("Vilken cykel vill du köpa?");
+            }
+        }
+    }
 }

@@ -4,43 +4,37 @@ public class Main {
 
     public static void main(String[] args) {
 
-        //  CODE CHALLENGE 24.1
-        int myInt = Utils.getUserIntInput();
-        System.out.println(myInt);
 
-        Scanner strInput = new Scanner(System.in);
+        //FileUtils.writeTextFile("Hellöu", "hello.txt");
+        //String fileContent = FileUtils.readTextFile("hello.txt");
+        //System.out.println(fileContent);
+
+        //  SPAWN NEW CUSTOMER
+        Customer customer = new Customer(4200);
 
         BikeShop shop = new BikeShop();
-        shop.addBike(new Bike("Scott", 500));
-        shop.addBike(new Bike("Nishiki", Utils.getRandomPrice()));
+        shop.addBike(new Bike("Scott", 500, DiscountCategory.DEMO));
+        shop.addBike(Bike.createExpensiveBike("Nishiki"));
         shop.addBike(new Bike("Jopo", Utils.getRandomPrice()));
 
         System.out.println("Välj cykel att köpa:");
         for (int i = 0; i < shop.getBikes().size(); i++) {
-            Bike bike = shop.getBikes().get(i);
+            Bike b = shop.getBikes().get(i);
             System.out.printf("[%d] %s kostar %.2f\n",
                     i,
-                    bike.getName(),
-                    bike.getPrice());
+                    b.getName(),
+                    b.getPrice()
+            );
         }
 
-        int chosenBike;
-        while (true) {
-            System.out.println("Vilken cykel vill du köpa?");
+        // Code Challenge: input
+        Bike bikeToBuy = shop.chooseBike();
 
-            String userInput = strInput.nextLine();
+        customer.buyBike(bikeToBuy);
 
-            if (Utils.isInteger(userInput)) {
-                chosenBike = Integer.parseInt(userInput);
-                break;
-            }
-            System.out.println("Du måste ge ett tal!");
-
-        }
-        System.out.printf("Grattis, du äger en %s\n",
-                shop.getBikes().get(chosenBike).getName());
-        //CCRandom.generate();
-
-
+        System.out.printf("Your bike:  %s\nFunds left: %.0f",
+                bikeToBuy.getName(),
+                customer.getFunds()
+        );
     }
 }

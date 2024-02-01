@@ -1,13 +1,28 @@
+import java.util.Random;
+
 public class Bike extends Vehicle implements ShopFeatures {
 
     private double price = 0;
+    DiscountCategory discountCat;
 
     public Bike(String name) {
         super(name, "Pedaled");
+        discountCat = DiscountCategory.NEW;
     }
     public Bike(String name, double price) {
         super(name, "Pedaled");
         this.price = price;
+        discountCat = DiscountCategory.NEW;
+    }
+    //  DISCOUNT CATEGORY
+    public Bike(String name, double price, DiscountCategory discountCat){
+        super(name, "loserBike");
+        discountCat = DiscountCategory.NEW;
+    }
+    // Static factory method
+    static Bike createExpensiveBike(String name) {
+        double price = (new Random()).nextInt(800, 1500);
+        return new Bike(name, price);
     }
 
     @Override

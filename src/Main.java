@@ -12,9 +12,16 @@ public class Main {
 
         //strArrMoomin.toString();
 
-        strArrMoomin.reverse();
+        //strArrMoomin.reverse();
 
+        Person bob = new Person("Bob");
+        Person bobiina = new Person("Bobiina", bob);
+        Person boberKurwa = new Person("BoberKurwa", bobiina);
 
-
+        Person current = bobiina;
+        do {
+            System.out.println(current.getName());
+            current = current.next;
+        } while(current != null);
     }
 }

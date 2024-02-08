@@ -4,37 +4,17 @@ public class Main {
 
     public static void main(String[] args) {
 
+        new BigO();
 
-        //FileUtils.writeTextFile("Hellöu", "hello.txt");
-        //String fileContent = FileUtils.readTextFile("hello.txt");
-        //System.out.println(fileContent);
+        String[] moominCharacters = {"Moomintroll", "Snufkin", "Snorkmaiden", "Little My", "Moominmamma", "Moominpappa", "Sniff", "Hemulen", "Snork", "Fillyjonk", "Too-Ticky"};
 
-        //  SPAWN NEW CUSTOMER
-        Customer customer = new Customer(4200);
+        StringArray strArrMoomin = new StringArray(moominCharacters);
 
-        BikeShop shop = new BikeShop();
-        shop.addBike(new Bike("Scott", 500, DiscountCategory.DEMO));
-        shop.addBike(Bike.createExpensiveBike("Nishiki"));
-        shop.addBike(new Bike("Jopo", Utils.getRandomPrice()));
+        //strArrMoomin.toString();
 
-        System.out.println("Välj cykel att köpa:");
-        for (int i = 0; i < shop.getBikes().size(); i++) {
-            Bike b = shop.getBikes().get(i);
-            System.out.printf("[%d] %s kostar %.2f\n",
-                    i,
-                    b.getName(),
-                    b.getPrice()
-            );
-        }
+        strArrMoomin.reverse();
 
-        // Code Challenge: input
-        Bike bikeToBuy = shop.chooseBike();
 
-        customer.buyBike(bikeToBuy);
 
-        System.out.printf("Your bike:  %s\nFunds left: %.0f",
-                bikeToBuy.getName(),
-                customer.getFunds()
-        );
     }
 }

@@ -11,7 +11,7 @@ public class Main {
         //strArrMoomin.toString();
         //strArrMoomin.reverse();
 
-        Stacky stacky = new Stacky(3);
+        Stacky stacky = new Stacky(7);
         stacky.push(moominCharacters[0]);
         stacky.push(moominCharacters[5]);
         stacky.push(moominCharacters[6]);

@@ -15,9 +15,10 @@ public class Linky {
 
         public void add(Person person) {
             Node n = new Node(person, null);
+            if(first == null) first = n;
+            if(last != null) last.next = n;
+            last = n;
         }
-
-
 
         public void printLinky() {
             System.out.printf("Linky: " );

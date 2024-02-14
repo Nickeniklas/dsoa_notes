@@ -1,3 +1,4 @@
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class Main {
@@ -18,6 +19,17 @@ public class Main {
         stacky.push(moominCharacters[2]);
 
         System.out.println(stacky);
+
+
+        //  CODE CHALLENGE Circular array
+        int today = 1;
+        int futureDay = 6;
+        int futureDay2 = 15;
+        System.out.printf("I dag är det %s\n",CircArr.CircArrWeekDays(today));
+        System.out.printf("Om %d är det %s\n", futureDay,
+                CircArr.CircArrWeekDays(today + futureDay));
+        System.out.printf("Om %d är det %s\n", futureDay2,
+                CircArr.CircArrWeekDays(today + futureDay2));
 
     }
 }

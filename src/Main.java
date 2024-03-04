@@ -21,6 +21,9 @@ public class Main {
 
         System.out.println(persons);
 
-        Recursy.loop(3, 420);
+        //Recursy.loop(3, 420);
+
+
+        Utils.countDown(10);
     }
 }

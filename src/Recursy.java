@@ -7,8 +7,5 @@ public class Recursy {
         // recursion
         System.out.print(i + " ");
         loop(i+1, max);
-
-
-
     }
 }

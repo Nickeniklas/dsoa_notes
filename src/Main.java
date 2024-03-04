@@ -1,35 +1,26 @@
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
 
-        //new BigO();
+        String[] lotrCharacters = {"Frodo", "Samwise", "Gandalf", "Aragorn", "Legolas", "Gimli", "Boromir", "Gollum", "Saruman", "Galadriel", "Elrond", "Glorfindel", "Bilbo", "Merry", "Pippin", "Treebeard", "Faramir", "Éowyn", "Éomer", "Grima"};
 
-        String[] moominCharacters = {"Moomintroll", "Snufkin", "Snorkmaiden", "Little My", "Moominmamma", "Moominpappa", "Sniff", "Hemulen", "Snork", "Fillyjonk", "Too-Ticky"};
-        StringArray strArrMoomin = new StringArray(moominCharacters);
-        //strArrMoomin.toString();
-        //strArrMoomin.reverse();
+        ArrayList<Person> persons = new ArrayList<>();
+        for (int i = 0; i < lotrCharacters.length; i++) {
+            persons.add(new Person(lotrCharacters[i], i));
 
-        Stacky stacky = new Stacky(7);
-        stacky.push(moominCharacters[0]);
-        stacky.push(moominCharacters[5]);
-        stacky.push(moominCharacters[6]);
-        stacky.push(moominCharacters[2]);
+        }
 
-        System.out.println(stacky);
+        System.out.println(persons);
 
+        Collections.sort(persons);
 
-        //  CODE CHALLENGE Circular array
-        int today = 1;
-        int futureDay = 6;
-        int futureDay2 = 15;
-        System.out.printf("I dag är det %s\n",CircArr.CircArrWeekDays(today));
-        System.out.printf("Om %d är det %s\n", futureDay,
-                CircArr.CircArrWeekDays(today + futureDay));
-        System.out.printf("Om %d är det %s\n", futureDay2,
-                CircArr.CircArrWeekDays(today + futureDay2));
+        System.out.println(persons);
 
+        Recursy.loop(3, 420);
     }
 }
